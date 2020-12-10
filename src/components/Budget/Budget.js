@@ -9,6 +9,7 @@ import Nav from "./../shared/Nav";
 import "./Budget.css";
 import { connect } from "react-redux";
 import { requestUserData } from "./../../ducks/userReducer";
+import { requestBudgetData } from "./../../ducks/budgetReducer";
 
 class Budget extends Component {
   componentDidMount() {
@@ -47,5 +48,5 @@ function mapStateToProps(state) {
 
 export default connect(
   mapStateToProps,
-  { requestUserData }
+  { requestUserData, requestBudgetData }
 )(Budget);
