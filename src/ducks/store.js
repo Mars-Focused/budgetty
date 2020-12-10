@@ -6,7 +6,4 @@ const rootReducer = combineReducers({
   budget: budgetReducer,
 });
 
-export default createStore(
-  rootReducer,
-  composeWithDevTools(applyMiddleware(promiseMiddleware))
-);
+export default createStore(rootReducer, applyMiddleware(promiseMiddleware));
