@@ -1,8 +1,10 @@
 import React, { Component } from "react";
-import { removePurchase } from "../";
+import { connect } from "react-redux";
+import { removePurchase } from "./../../ducks/budgetReducer";
 
 class DisplayPurchases extends Component {
   render() {
+    console.log(this.props);
     let { purchases } = this.props;
     if (!purchases)
       purchases = [
@@ -32,4 +34,11 @@ class DisplayPurchases extends Component {
   }
 }
 
-export default DisplayPurchases;
+function mapStateToProps(reduxState) {
+  return reduxState.products;
+}
+
+export default connect(
+  mapStateToProps,
+  { removePurchase }
+)(DisplayPurchases);
